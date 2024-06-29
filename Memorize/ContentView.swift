@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    let emojis = ["🎃", "💀", "🧛‍♂️", "🍬", "👹", "🧌", "🐺", "🐈‍⬛", "", "🪦", "", "⚰️", "🕸️",  🥀]
+    
     var body: some View {
-        HStack() {
-//            Image(systemName: "link")
-//                .imageScale(.large)
-//                .foregroundColor(.green)
-//            Text("Hello, biaa biaa!")
-            QuarterBox(isFaceUp: true)
-            QuarterBox(isFaceUp: true)
-            QuarterBox(isFaceUp: false)
-            QuarterBox(isFaceUp: true)
+        VStack {
+            ScrollView {
+                cards
+            }
+            Spacer()
+            cardCountAdjusters
         }
         .padding()
-        .font(.largeTitle)
+    }
+    
+    var cards: some View {
+        Text("XOK")
+    }
+    
+    var cardCountAdjusters: some View {
+        Text("XOK")
     }
 }
 
@@ -42,7 +48,7 @@ struct QuarterBox: View {
         }
         .onTapGesture {
             print("tapped")
-            isFaceUp = !isFaceUp
+            isFaceUp.toggle()
         }
 
     }
